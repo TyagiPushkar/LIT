@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import { useAuth } from '../auth/AuthContext'; // Assuming you have an AuthContext
 import axios from 'axios';
-import DashboardData from '../dashboard/DashboardData';
+// import DashboardData from '../dashboard/DashboardData';
 
 const UserProfile = () => {
     const { user } = useAuth(); // Get the user data from AuthContext

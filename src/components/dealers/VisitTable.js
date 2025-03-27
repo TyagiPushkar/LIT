@@ -10,9 +10,9 @@ import {
     TextField,
     Button,
     FormControl,
-    InputLabel,
-    Select,
-    MenuItem,
+    // InputLabel,
+    // Select,
+    // MenuItem,
     Box,
     CircularProgress,
     Dialog,
@@ -26,21 +26,21 @@ import {
 import { Visibility, RotateLeft, RotateRight } from '@mui/icons-material';
 import axios from 'axios';
 import { useAuth } from '../auth/AuthContext';
-import VisitMap from './VisitMap';
+// import VisitMap from './VisitMap';
 import { useNavigate } from 'react-router-dom';
 
 function VisitTable() {
     const [visits, setVisits] = useState([]);
     const { user } = useAuth();
     const navigate = useNavigate()
-    const [mapCenter, setMapCenter] = useState({ lat: 20.5937, lng: 78.9629 });
+    // const [mapCenter, setMapCenter] = useState({ lat: 20.5937, lng: 78.9629 });
     const [selectedDate, setSelectedDate] = useState(new Date());
-    const [markers, setMarkers] = useState([]);
-    const [directions, setDirections] = useState(null);
-    const [distances, setDistances] = useState([]);
+    // const [markers, setMarkers] = useState([]);
+    // const [directions, setDirections] = useState(null);
+    // const [distances, setDistances] = useState([]);
     const [employees, setEmployees] = useState([]);
     const [selectedEmpId, setSelectedEmpId] = useState(user.role === 'HR' ? '' : user.emp_id);
-    const [showMap, setShowMap] = useState(false);
+    // const [showMap, setShowMap] = useState(false);
     const [loading, setLoading] = useState(false);
     const [address, setAddress] = useState('');
         const [noData, setNoData] = useState(false);
@@ -68,14 +68,14 @@ function VisitTable() {
             fetchEmployees();
         }
     }, [user.role]);
-useEffect(() => {
-    // Calculate the center of all markers if there are any
-    if (markers.length > 0) {
-        const avgLat = markers.reduce((sum, marker) => sum + marker.lat, 0) / markers.length;
-        const avgLng = markers.reduce((sum, marker) => sum + marker.lng, 0) / markers.length;
-        setMapCenter({ lat: avgLat, lng: avgLng });
-    }
-}, [markers]);
+// useEffect(() => {
+//     // Calculate the center of all markers if there are any
+//     if (markers.length > 0) {
+//         const avgLat = markers.reduce((sum, marker) => sum + marker.lat, 0) / markers.length;
+//         const avgLng = markers.reduce((sum, marker) => sum + marker.lng, 0) / markers.length;
+//         // setMapCenter({ lat: avgLat, lng: avgLng });
+//     }
+// }, [markers]);
 
      const fetchVisits = async () => {
         setLoading(true);
@@ -89,21 +89,10 @@ useEffect(() => {
                 const visitData = response.data.data;
                 console.log("Visit Data:", visitData);
                 
-                const markerData = visitData.map((visit, index) => {
-                    const [lat, lng] = visit.VisitLatLong.split(',').map(Number);
-                    return {
-                        lat,
-                        lng,
-                        label: `${index + 1}`,  // Display visit count starting from 1
-                        companyName: visit.CompanyName,
-                        dealerName: visit.DealerName,
-                        visitTime: new Date(visit.VisitTime).toLocaleString(),
-                        mobileNo: visit.MobileNo,
-                    };
-                });
+            
 
                 setVisits(visitData);
-                setMarkers(markerData);
+                // setMarkers(markerData);
             } else {
                 setVisits([]);
                 setNoData(true);

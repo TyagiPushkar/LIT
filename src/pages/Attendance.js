@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import { Box, useMediaQuery } from '@mui/material';
 import AttendanceList from '../components/activity/AttendanceList';
-import A from '../components/activity/A';
+// import A from '../components/activity/A';
 
 
 function Attendance() {

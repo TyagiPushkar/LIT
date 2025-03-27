@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import {
-    CircularProgress,
+    // CircularProgress,
     Typography,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    Paper,
+    // Table,
+    // TableBody,
+    // TableCell,
+    // TableContainer,
+    // TableHead,
+    // TableRow,
+    // Paper,
     Box,
     TextField,
     Button,
@@ -18,7 +18,7 @@ import { saveAs } from 'file-saver';
 import GetAppIcon from '@mui/icons-material/GetApp';
 import AttendanceReport from './AttendanceReport';
 import SalaryList from '../employee/SalaryList';
-import SalarySlip from '../employee/SalarySlip';
+// import SalarySlip from '../employee/SalarySlip';
 const VisitList = () => {
     const [employees, setEmployees] = useState([]);
     const [visits, setVisits] = useState([]);
@@ -123,8 +123,8 @@ const VisitList = () => {
 };
 
 
-    const filterDealerVisits = (visits) =>
-        visits.filter((visit) => visit.SourceEvent !== 'In' && visit.SourceEvent !== 'Out');
+    // const filterDealerVisits = (visits) =>
+    //     visits.filter((visit) => visit.SourceEvent !== 'In' && visit.SourceEvent !== 'Out');
 
     return (
         <>

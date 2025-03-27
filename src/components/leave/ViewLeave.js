@@ -60,10 +60,10 @@ function ViewLeave() {
 
 
      useEffect(() => {
-    if (employees.length > 0) {
+      if (employees.length > 0) {
         fetchLeaves();
-    }
-}, [employees]); // Runs only when `employees` data changes
+      }
+    }, [user.emp_id]); 
 
  const fetchLeaves = async () => {
             if (!user || !user.emp_id) {

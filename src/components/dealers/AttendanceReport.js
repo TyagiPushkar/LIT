@@ -4,13 +4,13 @@ import {
     Box,
     TextField,
     Button,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    Paper,
+    // Table,
+    // TableBody,
+    // TableCell,
+    // TableContainer,
+    // TableHead,
+    // TableRow,
+    // Paper,
 } from '@mui/material';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
@@ -114,7 +114,7 @@ const AttendanceReport = () => {
     saveAs(blob, "attendance_report.csv");
 };
 
-    const uniqueDates = [...new Set(filteredAttendance.map(record => record.InTime.split(' ')[0]))].sort();
+    // const uniqueDates = [...new Set(filteredAttendance.map(record => record.InTime.split(' ')[0]))].sort();
 
 
     return (

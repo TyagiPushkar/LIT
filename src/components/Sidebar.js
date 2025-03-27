@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { Drawer, List, ListItem, Box, ListItemIcon, Typography } from '@mui/material';
-import { Dashboard, HolidayVillage, Policy, Notifications, Person, BarChart } from '@mui/icons-material';
+import { HolidayVillage, Policy, Person, BarChart } from '@mui/icons-material';
 import { useAuth } from './auth/AuthContext';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
@@ -12,8 +12,8 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import LaptopIcon from '@mui/icons-material/Laptop';
 import SummarizeIcon from '@mui/icons-material/Summarize';
 import HRSmileLogo from "../assets/images (1).png";
-import ChecklistIcon from '@mui/icons-material/Checklist';
-import MenuIcon from '@mui/icons-material/Menu';
+// import ChecklistIcon from '@mui/icons-material/Checklist';
+// import MenuIcon from '@mui/icons-material/Menu';
 function Sidebar() {
     const location = useLocation();
     const { user } = useAuth();

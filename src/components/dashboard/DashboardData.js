@@ -4,7 +4,7 @@ import {
     Box,
     CircularProgress,
     Divider,
-    Grid,
+    // Grid,
     LinearProgress,
     List,
     ListItem,
@@ -19,13 +19,13 @@ import {
     TableRow,
     Typography,
     Card,
-    CardContent,
+    // CardContent,
     Paper,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import { useAuth } from '../auth/AuthContext';
-import UserProfile from '../employee/UserProfile';
+// import UserProfile from '../employee/UserProfile';
 
 const DashboardData = () => {
     const [employeeData, setEmployeeData] = useState(null);

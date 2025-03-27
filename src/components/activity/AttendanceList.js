@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
   Alert,
-  MenuItem,
-  Select,
+  // MenuItem,
+  // Select,
   FormControl,
-  InputLabel,
+  // InputLabel,
   Button,
   Table,
   TableBody,
@@ -38,13 +38,13 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 //01144712929
-const CustomEvent = ({ event }) => (
-  <div style={{ padding: "5px" }}>
-    <strong>First In:</strong> {event.firstIn} <br />
-    <strong>Last Out:</strong> {event.lastOut} <br />
-    <strong>Hours:</strong> {event.workingHours}
-  </div>
-);
+// const CustomEvent = ({ event }) => (
+//   <div style={{ padding: "5px" }}>
+//     <strong>First In:</strong> {event.firstIn} <br />
+//     <strong>Last Out:</strong> {event.lastOut} <br />
+//     <strong>Hours:</strong> {event.workingHours}
+//   </div>
+// );
 
 const generateMapUrl = (geoLocation) => {
   if (!geoLocation) {
@@ -82,10 +82,10 @@ const AttendanceList = () => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const isMobile = useMediaQuery("(max-width:600px)");
 
-  const getShiftStartTime = (shift) => {
-    const [startTime] = shift.split(" - ");
-    return startTime;
-  };
+  // const getShiftStartTime = (shift) => {
+  //   const [startTime] = shift.split(" - ");
+  //   return startTime;
+  // };
 
   const regularise = () => {
     navigate("/regularise");
@@ -192,10 +192,10 @@ const AttendanceList = () => {
           })
           .filter(Boolean); // Remove null values
 
-        attendanceData.forEach((record) => {
-          const attendanceColor = compareTimes(record.firstIn, user.shift);
-          // console.log(`Date: ${record.date}, First In: ${record.firstIn}, Color: ${attendanceColor}`);
-        });
+        // attendanceData.forEach((record) => {
+        //   const attendanceColor = compareTimes(record.firstIn, user.shift);
+        //   // console.log(`Date: ${record.date}, First In: ${record.firstIn}, Color: ${attendanceColor}`);
+        // });
         setActivities(attendanceData);
         console.log(attendanceData);
       } else {
